@@ -7,10 +7,11 @@ import android.view.View;
 import android.widget.Button;
 
 public class WelcomeActivity extends AppCompatActivity {
-    private Button guestButton;
+    Button guestButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_welcome);
         guestButton = (Button) findViewById(R.id.try_guest);
         guestButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -18,7 +19,6 @@ public class WelcomeActivity extends AppCompatActivity {
                 startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
             }
         });
-        setContentView(R.layout.activity_welcome);
     }
 
 }
