@@ -14,7 +14,7 @@ import android.widget.EditText;
 public class AddTripActivity extends AppCompatActivity {
 
     private EditText fromText, toText;
-    private Calendar fromCalendar;
+    private Calendar fromCalendar, toCalendar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,15 +24,16 @@ public class AddTripActivity extends AppCompatActivity {
         toText = (EditText) findViewById(R.id.edit_to);
 
         fromCalendar = Calendar.getInstance();
+        toCalendar = Calendar.getInstance();
 
-        final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+        final DatePickerDialog.OnDateSetListener fromDate = new DatePickerDialog.OnDateSetListener() {
 
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 fromCalendar.set(Calendar.YEAR, year);
                 fromCalendar.set(Calendar.MONTH, month);
                 fromCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                updateLabel();
+                updateLabel(fromText);
             }
         };
 
@@ -40,19 +41,42 @@ public class AddTripActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                new DatePickerDialog(AddTripActivity.this, date, fromCalendar
+                new DatePickerDialog(AddTripActivity.this, fromDate, fromCalendar
                         .get(Calendar.YEAR), fromCalendar.get(Calendar.MONTH),
                         fromCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
+        final DatePickerDialog.OnDateSetListener toDate = new DatePickerDialog.OnDateSetListener() {
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                toCalendar.set(Calendar.YEAR, year);
+                toCalendar.set(Calendar.MONTH, month);
+                toCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                updateLabel(toText);
+            }
+        };
+
+        toText.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                new DatePickerDialog(AddTripActivity.this, toDate, toCalendar
+                        .get(Calendar.YEAR), toCalendar.get(Calendar.MONTH),
+                        toCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
     }
 
-    private void updateLabel() {
+    private void updateLabel(EditText t) {
 
         String myFormat = "MM/dd/yy"; //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-
-        fromText.setText(sdf.format(fromCalendar.getTime()));
+        if (t.equals(fromText)) {
+            t.setText(sdf.format(fromCalendar.getTime()));
+        } else if (t.equals(toText)) {
+            t.setText(sdf.format(toCalendar.getTime()));
+        }
     }
 }
 
