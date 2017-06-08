@@ -10,11 +10,11 @@
         android:id="@+id/text_from"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="44dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="102dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="77dp"
         android:text="From"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/text_destination"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -32,15 +32,14 @@
         android:id="@+id/edit_from"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/text_from"
-        android:layout_alignBottom="@+id/text_from"
-        android:layout_marginLeft="31dp"
-        android:layout_marginStart="31dp"
-        android:layout_toEndOf="@+id/text_from"
-        android:layout_toRightOf="@+id/text_from"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
         android:ems="10"
         android:inputType="date"
-        android:hint="dd/mm/yyyy"/>
+        android:hint="mm/dd/yy"
+        android:layout_below="@+id/text_from"
+        android:layout_toRightOf="@+id/text_from"
+        android:layout_toEndOf="@+id/text_from" />
 
     <EditText
         android:id="@+id/edit_to"
@@ -52,6 +51,23 @@
         android:layout_alignStart="@+id/edit_from"
         android:ems="10"
         android:inputType="date"
-        android:hint="dd/mm/yyyy"/>
+        android:hint="mm/dd/yy"/>
+
+    <TextView
+        android:id="@+id/text_destination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Destination"
+        android:layout_marginTop="68dp"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/edit_to"
+        android:layout_toStartOf="@+id/edit_to" />
+
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/edit_from"
+        android:layout_marginBottom="46dp"
+        android:layout_below="@+id/text_destination" />
 
 </RelativeLayout>
