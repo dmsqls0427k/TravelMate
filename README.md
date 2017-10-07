@@ -5,4 +5,4 @@ The prototype image is the following: <br />
 <img src ="https://github.com/dmsqls0427k/TripTap/blob/master/pictures/0.jpg" width = "355" height = "255">
 <img src ="https://github.com/dmsqls0427k/TripTap/blob/master/pictures/1.jpg" width = "355" height = "255">
 <img src ="https://github.com/dmsqls0427k/TripTap/blob/master/pictures/3.png" width = "355" height = "255">
-<img src = "https://github.com/dmsqls0427k/TravelMate/blob/master/pictures/Search%403x.png" width = "170" height = 255">
+<img src ="https://github.com/dmsqls0427k/TravelMate/blob/master/pictures/Search%403x.png" width = "170" height = "255">
