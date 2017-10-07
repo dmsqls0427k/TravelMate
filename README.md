@@ -7,3 +7,4 @@ The prototype image is the following: <br />
 <img src ="https://github.com/dmsqls0427k/TripTap/blob/master/pictures/3.png" width = "355" height = "255">
 <img src ="https://github.com/dmsqls0427k/TravelMate/blob/master/pictures/Search%403x.png" width = "170" height = "255">
 <img src = "https://github.com/dmsqls0427k/TravelMate/blob/master/pictures/Feed%403x.png" width = "170" heighy = "255">
+The coding is not yet completed and it is in very early stages but the prototype has been created in mid fidelity.
